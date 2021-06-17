@@ -4,6 +4,7 @@ var Textbox = document.getElementById("textbox");
 function start() {
 Textbox.innerHTML = "";
   recognition.start();
+  document.getElementById("textbox").innerHTML= "";
 }
 recognition.onresult = function(event) {
  console.log(event);
@@ -17,7 +18,7 @@ recognition.onresult = function(event) {
 }
 function speak() {
  var synth = window.speechSynthesis;
-  speak_data = "Taking you Selfie in 5 seconds";
+  speak_data = "Taking your Selfie in 5 seconds";
   var utterThis = new SpeechSynthesisUtterance(speak_data); 
   synth.speak(utterThis);
   Webcam.attach(camera); 
@@ -41,4 +42,7 @@ function save() {
   image = document.getElementById("selfie_image").src;
   link.href= image;
   link.click();
+}
+function take_selfie() {
+ 
 }
