@@ -44,5 +44,7 @@ function save() {
   link.click();
 }
 function take_selfie() {
- 
+ Webcam.snap(function(data_uri) {
+   document.getElementById("result").innerHTML = '<img id="selfie_image" src="'+ data_uri +'"/>';
+ });
 }
